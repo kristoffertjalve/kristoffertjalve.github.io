@@ -1,0 +1,76 @@
+styles.css	
+/* styles.css */
+
+/* Add your CSS styles here */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #333;
+}
+/* Center the contents of the body horizontally and vertically */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to full viewport height */
+  margin: 0; /* Remove default body margin */
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Style for the random photo container */
+.image-container {
+  position: relative; /* Position container relative to its parent */
+  width: 100vw; /* Set width to full viewport width */
+  height: 100vh; /* Set height to full viewport height */
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Style for the images */
+.image-container img {
+  width: 100%; /* Set width to fill container */
+  height: 100%; /* Set height to fill container */
+  object-fit: cover; /* Scale image as large as possible while maintaining aspect ratio */
+}
+
+/* Style for the image titles (subtitles) */
+.image-container p {
+  position: absolute; /* Position the title absolutely */
+  bottom: 30px; /* Place the title with some space above the bottom */
+  left: 0; /* Align the title to the left */
+  width: 100%; /* Set the width to match the container */
+  padding: 10px; /* Add padding to the title */
+  color: white; /* Text color */
+  font-size: 30px; /* Font size */
+  text-align: center; /* Center the text horizontally */
+  margin: 0; /* Remove default margin */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+/* Tooltip container */
+.image-container {
+  position: relative;
+}
+
+/* Tooltip text */
+.image-container::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -20px; /* Adjust the position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show the tooltip text when hovering over the container */
+.image-container:hover::after {
+  opacity: 1;
+}

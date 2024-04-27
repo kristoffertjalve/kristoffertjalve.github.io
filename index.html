@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Photo from Are.na</title>
+  <!-- Link the CSS file here -->
+  <link rel="stylesheet" href="styles.css">
+   <script>
+let previousPhoto = null;
+
+async function fetchRandomPhoto() {
+  const channelSlug = 'testing-j-f9irhbniw'; // Replace with your channel slug
+  const response = await fetch(`https://api.are.na/v2/channels/${channelSlug}/contents`);
+  const data = await response.json();
+  
+  // Check if the data contains any images
+  const images = data.contents.filter(block => block.class === 'Image');
+  if (images.length === 0) {
+    console.error('No images found in the channel.');
+    return;
+  }
+  
+  // Select a random image
+  let randomImage;
+  do {
+    randomImage = images[Math.floor(Math.random() * images.length)];
+  } while (randomImage === previousPhoto); // Keep fetching until it's different from the previous one
+
+  // Store the current photo as the previous one
+  previousPhoto = randomImage;
+
+  // Check if the random image has a valid URL and title
+  if (!randomImage.image || !randomImage.image.original || !randomImage.image.original.url) {
+    console.error('Invalid image URL.');
+    return;
+  }
+  
+  // Display the image
+  const imageElement = document.createElement('img');
+  imageElement.src = randomImage.image.original.url;
+
+  // Clear previous photo
+  document.getElementById('random-photo').innerHTML = '';
+
+  // Append the new image
+  document.getElementById('random-photo').appendChild(imageElement);
+
+  // Display the title below the image
+  if (randomImage.title) {
+    const titleElement = document.createElement('p');
+    titleElement.textContent = randomImage.title;
+    document.getElementById('random-photo').appendChild(titleElement);
+  }
+}
+
+// Call fetchRandomPhoto function when the page loads
+window.onload = fetchRandomPhoto;
+</script>
+</head>
+  <!-- Your HTML content here -->
+  <body>
+  <!-- Container for displaying the random photo -->
+    <a id="random-photo" class="image-container" href="https://www.instagram.com/iamnotana/" target="_blank" title="A tribute to Ana Andersen Šantl. Refresh for another photo. Click to visit her Instagram. The texts are written by me, Kristoffer."></a>
+  <!-- JavaScript code -->
+  </body>
+</html>
