@@ -34,7 +34,6 @@ body {
   height: 100%; /* Set height to fill container */
   object-fit: cover; /* Scale image as large as possible while maintaining aspect ratio */
 }
-
 /* Style for the image titles (subtitles) */
 .image-container p {
   position: absolute; /* Position the title absolutely */
@@ -48,29 +47,22 @@ body {
   margin: 0; /* Remove default margin */
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-/* Tooltip container */
-.image-container {
-  position: relative;
+/* Adjust positioning for mobile devices */
+@media only screen and (max-width: 768px) {
+  .image-container p {
+    bottom: 10px; /* Adjust as needed for better visibility on mobile */
+    font-size: 20px; /* Adjust font size for better readability on mobile */
+  }
 }
 
-/* Tooltip text */
-.image-container::after {
-  content: attr(title);
-  position: absolute;
-  bottom: -20px; /* Adjust the position as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  background-color: #333;
-  color: #fff;
-  font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 4px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* Show the tooltip text when hovering over the container */
-.image-container:hover::after {
-  opacity: 1;
+/* CSS styles for the question mark icon */
+.question-mark {
+  position: fixed;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  z-index: 999; /* Ensure it appears above other elements */
+  font-size: 30px; /* Adjust font size */
+  color: white; /* Icon color */
+  text-decoration: none; /* Remove underline */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
