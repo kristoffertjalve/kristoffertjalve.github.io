@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Photo from Are.na</title>
+  <title>My Girlfriend Is an Artist</title>
   <!-- Link the CSS file here -->
   <link rel="stylesheet" href="styles.css">
    <script>
 let previousPhoto = null;
 
 async function fetchRandomPhoto() {
-  const channelSlug = 'testing-j-f9irhbniw'; // Replace with your channel slug
+  const channelSlug = 'my-girlfriend-is-an-artist'; // Replace with your channel slug
   const response = await fetch(`https://api.are.na/v2/channels/${channelSlug}/contents`);
   const data = await response.json();
   
@@ -61,7 +61,8 @@ window.onload = fetchRandomPhoto;
   <!-- Your HTML content here -->
   <body>
   <!-- Container for displaying the random photo -->
-    <a id="random-photo" class="image-container" href="https://www.instagram.com/iamnotana/" target="_blank" title="A tribute to Ana Andersen Šantl. Refresh for another photo. Click to visit her Instagram. The texts are written by me, Kristoffer."></a>
-  <!-- JavaScript code -->
+    <a id="random-photo" class="image-container"></a>
+  <!-- Anchor element for the question mark icon -->
+  <a href="https://www.are.na/kristoffer-tjalve/my-girlfriend-is-an-artist" target="_blank" class="question-mark">&#63;</a>
   </body>
 </html>
