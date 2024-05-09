@@ -50,7 +50,7 @@ body {
 /* Adjust positioning for mobile devices */
 @media only screen and (max-width: 768px) {
   .image-container p {
-    bottom: 20px; /* Adjust as needed for better visibility on mobile */
+    bottom: 40px; /* Adjust as needed for better visibility on mobile */
     font-size: 20px; /* Adjust font size for better readability on mobile */
   }
 }
