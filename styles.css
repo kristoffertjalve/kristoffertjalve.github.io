@@ -97,3 +97,16 @@ button.question-mark {
 @media only screen and (max-width: 768px) {
   .letter-overlay { font-size: 20px; padding: 70px 20px 30px; }
 }
+
+/* Shared top-right links and clickable photo. */
+.image-container { cursor: pointer; }
+.photo-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.photo-nav .question-mark { position: static; }
