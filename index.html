@@ -76,7 +76,7 @@ async function initializePhotos() {
     }
     photos = contents.filter(block =>
       block.class === 'Image' && block.image?.original?.url
-    );
+    ).reverse();
     if (photos.length === 0) throw new Error('No images found in the channel.');
     await showPhoto(0);
   } catch (error) {
