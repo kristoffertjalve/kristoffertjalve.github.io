@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Girlfriend Is an Artist</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20x%3D%2250%22%20y%3D%2280%22%20text-anchor%3D%22middle%22%20font-size%3D%2285%22%3E%F0%9F%A7%A1%3C%2Ftext%3E%3C%2Fsvg%3E">
   <!-- Link the CSS file here -->
-  <link rel="stylesheet" href="styles.css?v=letter-overlay-2">
+  <link rel="stylesheet" href="styles.css?v=photo-nav-3">
 
 <!-- Open Graph meta tags -->
   <meta property="og:title" content="My Girlfriend Is an Artist">
@@ -91,9 +92,11 @@ window.addEventListener('DOMContentLoaded', initializePhotos);
   <body>
   <!-- Container for displaying the random photo -->
     <a id="random-photo" class="image-container" role="button" tabindex="0" aria-label="Show next photo"></a>
-  <a href="https://www.are.na/kristoffer-tjalve/my-girlfriend-is-an-artist/feed/rss" class="question-mark" style="left: 20px; right: auto;" aria-label="RSS feed">RSS</a>
-  <!-- Anchor element for the question mark icon -->
-  <button type="button" id="letter-toggle" class="question-mark" aria-label="Read letter to Ana" aria-controls="letter-overlay" aria-expanded="false">&#63;</button>
+  <nav class="photo-nav" aria-label="Photo links">
+    <a href="https://www.are.na/kristoffer-tjalve/my-girlfriend-is-an-artist" class="question-mark" aria-label="Are.na photo channel">**</a>
+    <a href="https://www.are.na/kristoffer-tjalve/my-girlfriend-is-an-artist/feed/rss" class="question-mark" aria-label="RSS feed">RSS</a>
+    <button type="button" id="letter-toggle" class="question-mark" aria-label="Read letter to Ana" aria-controls="letter-overlay" aria-expanded="false">&#63;</button>
+  </nav>
   <section id="letter-overlay" class="letter-overlay" aria-label="Letter to Ana" hidden>
     <div class="letter-copy">
       <p>Dear <a href="https://iamnotana.com">Ana</a>,</p>
