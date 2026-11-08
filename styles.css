@@ -72,8 +72,13 @@ body {
 .letter-overlay {
   position: fixed;
   inset: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  height: 100dvh;
   z-index: 1000;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding: 80px 30px 40px;
   color: white;
   font-family: "Times New Roman", serif;
@@ -95,7 +100,7 @@ button.question-mark {
 }
 #letter-toggle.letter-open { transform: rotate(180deg); }
 @media only screen and (max-width: 768px) {
-  .letter-overlay { font-size: 20px; padding: 70px 20px 30px; }
+  .letter-overlay { font-size: 20px; padding: 70px 20px calc(30px + env(safe-area-inset-bottom)); }
 }
 
 /* Shared top-right links and clickable photo. */
